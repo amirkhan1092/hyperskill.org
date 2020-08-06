@@ -3,4 +3,4 @@
 a = int(input().strip())
 
 # put your code here
-print(10 > a > 250)
+print(a < 10 or a > 250)

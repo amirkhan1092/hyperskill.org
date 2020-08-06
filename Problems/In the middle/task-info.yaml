@@ -1,0 +1,28 @@
+type: code
+files:
+- name: task.py
+  visible: true
+  text: |-
+    # don't modify this code
+    # a stores an input value
+    a = int(input().strip())
+
+    # put your code here
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/5924
+status: Failed
+feedback:
+  message: |
+    Failed test #1 of 8. Wrong answer
+
+    This is a sample test from the problem statement!
+
+    Test input:
+    0
+    Correct output:
+    True
+
+    Your code output:
+    False
+  time: Thu, 06 Aug 2020 00:58:30 UTC
+record: -1

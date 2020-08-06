@@ -38,9 +38,9 @@ files:
             user_output = reply.split(':')[-1].strip()
             lowered_output = user_output.lower()
             ans, amount, show_tests = clue
-            if ans and 'yes' in lowered_output:
+            if ans:
                 if amount > 0:
-                    is_correct = f'{amount}' in lowered_output
+                    is_correct = f'{amount}' in lowered_output and 'yes' in lowered_output
                     if is_correct:
                         if f'{amount}.' in lowered_output:
                             return CheckResult.wrong(
@@ -67,8 +67,24 @@ files:
 
                         else:
                             return CheckResult.wrong('')
+                if 'yes' in lowered_output:
+                    return CheckResult.correct()
+                else:
+                    right_output = (
+                        "Yes, I can make that amount of coffee"
+                    )
 
-                return CheckResult.correct()
+                    if show_tests:
+                        return CheckResult.wrong(
+                            "Your output:\n" +
+                            user_output +
+                            "\nRight output:\n" +
+                            right_output
+                        )
+
+                    else:
+                        return CheckResult.wrong('')
+
             else:
                 cond1 = 'no' in lowered_output
                 cond2 = str(amount) in lowered_output
@@ -103,6 +119,34 @@ files:
     if __name__ == '__main__':
         CoffeeMachineTest('machine.coffee_machine').run_tests()
   learner_created: false
+- name: machine/coffee_machine.py
+  visible: true
+  text: |
+    # # Write your code here
+    # k = '''Starting to make a coffee
+    # Grinding coffee beans
+    # Boiling water
+    # Mixing boiled water with crushed coffee beans
+    # Pouring coffee into the cup
+    # Pouring some milk into the cup
+    # Coffee is ready!'''
+    # print(k)
+    print('Write how many cups of coffee you will need:')
+    num = int(input())
+
+    water = num * 200
+    milk = num * 50
+    beans = num * 15
+
+    print('For 25 cups of coffee you will need:')
+
+    print('%d ml of water'%(water))
+    print('%d ml of milk'%(milk))
+    print('%d g of coffee beans'%(beans))
+  learner_created: true
+- name: machine/coffee_made.py
+  visible: true
+  learner_created: true
 feedback_link: https://hyperskill.org/projects/68/stages/368/implement
 status: Unchecked
 record: -1

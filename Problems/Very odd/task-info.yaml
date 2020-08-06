@@ -4,5 +4,9 @@ files:
   visible: true
   learner_created: false
 feedback_link: https://hyperskill.org/learn/step/6380
-status: Unchecked
+status: Solved
+feedback:
+  message: <html>Correct solution<br/><br/>Continue on <a href="https://hyperskill.org/learn/step/6380">JetBrains
+    Academy</a></html>
+  time: Thu, 06 Aug 2020 02:10:14 UTC
 record: -1

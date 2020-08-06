@@ -15,7 +15,6 @@ milk = num * 50
 beans = num * 15
 
 print('For 25 cups of coffee you will need:')
-
-print('%d ml of water'%(water))
-print('%d ml of milk'%(milk))
-print('%d g of coffee beans'%(beans))
+print('%d ml of water' % water)
+print('%d ml of milk' % milk)
+print('%d g of coffee beans' % beans)

@@ -4,6 +4,7 @@ from hstest.test_case import TestCase
 CheckResult.correct = lambda: CheckResult(True, '')
 CheckResult.wrong = lambda feedback: CheckResult(False, feedback)
 
+
 class CoffeeMachineTest(StageTest):
     def generate(self) -> List[TestCase]:
         return TestCase.from_stepik(
@@ -31,6 +32,9 @@ class CoffeeMachineTest(StageTest):
     def check(self, reply: str, clue: Any) -> CheckResult:
         user_output = reply.split(':')[-1].strip()
         lowered_output = user_output.lower()
+        print("----")
+        print(lowered_output)
+        print("----")
         ans, amount, show_tests = clue
         if ans:
             if amount > 0:
@@ -61,7 +65,7 @@ class CoffeeMachineTest(StageTest):
 
                     else:
                         return CheckResult.wrong('')
-            if 'yes' in lowered_output:
+            if 'yes, i can make that amount of coffee' == lowered_output:
                 return CheckResult.correct()
             else:
                 right_output = (
